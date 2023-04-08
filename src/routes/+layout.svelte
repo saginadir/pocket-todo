@@ -2,10 +2,27 @@
     import "../app.css";
 </script>
 
-<svelte:head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap" rel="stylesheet">
-</svelte:head>
+<style>
+    @font-face {
+        font-family: 'Lobster Two';
+        font-style: normal;
+        font-weight: 400;
+        src: url('/fonts/LobsterTwo-Regular.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Lobster Two';
+        font-style: italic;
+        font-weight: 400;
+        src: url('/fonts/LobsterTwo-Italic.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Lobster Two';
+        font-style: normal;
+        font-weight: 700;
+        src: url('/fonts/LobsterTwo-Bold.ttf') format('truetype');
+    }
+</style>
 
 <slot />

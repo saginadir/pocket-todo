@@ -8,7 +8,7 @@
 
     const pb = getPB();
 
-    let newTaskMode = false;
+    let newTaskMode = true;
     let sillyTodo = "";
     let newTodoValue = "";
     let fetchingInitialTodos = true;
@@ -85,10 +85,10 @@
 
 <div class="flex items-center justify-between p-5">
     <h1 class="text-2xl font-lobster text-left text-lime-500">PocketTODO</h1>
-    <a class="text-lime-200" href="/" on:click={onSignOut}>Sign out</a>
+    <a class="text-gray-300" href="/" on:click={onSignOut}>Sign out</a>
 </div>
 
-<div class="flex flex-col gap-5 items-center mt-16">
+<div class="flex flex-col gap-5 items-center justify-center mt-16">
     <h1 class="text-4xl font-lobster text-left text-lime-500 mb-8">My TODO List</h1>
     {#each todos as todo}
         <div class="flex justify-between gap-3 group items-center justify-center w-96">
@@ -109,9 +109,9 @@
             <div class="flex gap-3 items-center">
                 <div class="flex flex-col gap-2">
                     <span class="text-sm font-bold text-lime-500">New Task:</span>
-                    <div class="flex gap-3">
+                    <div class="flex gap-3 flex-col md:flex-row">
                         <input use:newTodoFieldLoaded bind:value={newTodoValue} on:keydown={onEnterPress} type="text"
-                               class="bg-lime-50 py-2 px-4 border-none focus:ring-lime-500 focus:ring-2 rounded-md shadow-md w-96 placeholder-gray-300"
+                               class="bg-lime-50 py-2 px-4 border-none focus:ring-lime-500 w-96 focus:ring-2 rounded-md shadow-md grow placeholder-gray-300"
                                placeholder="e.g. {sillyTodo}"/>
                         <button class="text-lg bg-lime-500 hover:bg-lime-700 py-1.5 px-4 rounded-lg shadow-md text-lime-50"
                                 on:click={addNewTodo}>
