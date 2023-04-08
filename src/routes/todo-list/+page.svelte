@@ -98,7 +98,7 @@
                 <input class="w-6 h-6 rounded-lg cursor-pointer border-lime-500 border-2 bg-white text-lime-500 focus:ring-lime-200 " type="checkbox" bind:checked={todo.checked}/>
                 <span class="text-left w-[310px]">{todo.title}</span>
             </button>
-            <button on:click={() => {deleteTodo(todo)}} class="md:invisible md:group-hover:visible underline p-1 rounded-md bg-gray-50 hover:bg-gray-100">
+            <button on:click={() => {deleteTodo(todo)}} class="md:invisible md:group-hover:visible underline p-1 rounded-md hover:bg-gray-50">
                 <img src={trashIcon} alt="delete todo" class="w-4 h-4 "/>
             </button>
         </div>
