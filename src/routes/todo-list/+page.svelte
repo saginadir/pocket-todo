@@ -3,6 +3,7 @@
     import {mustBeLoggedIn} from "$lib/utils/mustBeLoggedIn.js";
     import {onMount} from "svelte";
     import {randomSillyTodo} from "$lib/store/sillyTodos.js";
+    import trashIcon from "$lib/assets/trash.svg";
 
     mustBeLoggedIn()
 
@@ -91,14 +92,15 @@
 <div class="flex flex-col gap-5 items-center justify-center mt-16">
     <h1 class="text-4xl font-lobster text-left text-lime-500 mb-8">My TODO List</h1>
     {#each todos as todo}
-        <div class="flex justify-between gap-3 group items-center justify-center w-96">
+        <div class="flex justify-between gap-3 group items-center justify-center  w-96">
             <button class:line-through={todo.checked} class:text-gray-400={todo.checked} class="flex gap-3 cursor-pointer items-center select-none"
                     on:click={() => {toggleTodo(todo)}}>
-                <input class="w-6 h-6 rounded-lg cursor-pointer border-lime-500 border-2 bg-white text-lime-500 focus:ring-lime-200" type="checkbox" bind:checked={todo.checked}/>
-
-                {todo.title}
+                <input class="w-6 h-6 rounded-lg cursor-pointer border-lime-500 border-2 bg-white text-lime-500 focus:ring-lime-200 " type="checkbox" bind:checked={todo.checked}/>
+                <span class="text-left w-[310px]">{todo.title}</span>
             </button>
-            <button on:click={() => {deleteTodo(todo)}} class="invisible group-hover:visible underline text-xs">delete</button>
+            <button on:click={() => {deleteTodo(todo)}} class="md:invisible md:group-hover:visible underline p-1 rounded-md bg-gray-50 hover:bg-gray-100">
+                <img src={trashIcon} alt="delete todo" class="w-4 h-4 "/>
+            </button>
         </div>
     {:else}
         <h2 class:invisible={fetchingInitialTodos}>It's a great day to get things done! Start by adding a task to your to-do list.</h2>
