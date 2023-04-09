@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>Pocket TODO | Privacy Policy</title>
+</svelte:head>
+
 <div class="flex flex-col m-10">
     <div class="">
         <a href="/" class="rounded-lg p-3 bg-lime-500 text-white block">← Back</a>

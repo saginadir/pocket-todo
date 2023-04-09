@@ -35,6 +35,10 @@
     });
 </script>
 
+<svelte:head>
+    <title>Pocket TODO | Authorization Redirect</title>
+</svelte:head>
+
 <div class="flex justify-center items-center h-screen">
     {#await promise}
         <h1 class="text-4xl animate-bounce">Redirecting{dots}</h1>

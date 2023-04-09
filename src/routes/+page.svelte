@@ -1,7 +1,9 @@
 <script>
-    import googleIcon from "$lib/assets/google_logo.svg";
     import {onMount} from "svelte";
+
+    import googleIcon from "$lib/assets/google_logo.svg";
     import {getPB} from "$lib/utils/pockerBase.js";
+    import {isLoggedIn} from "$lib/utils/loginSecurity.js";
     import {
         redirectURI,
         codeVerifier,
@@ -9,7 +11,13 @@
 
     let authUrl = '';
 
+    const loggedIn = isLoggedIn()
+
     onMount(async () => {
+        if (loggedIn) {
+            return;
+        }
+
         const pb = getPB();
 
         const authMethods = await pb.collection('users').listAuthMethods();
@@ -21,8 +29,7 @@
 </script>
 
 <svelte:head>
-    <meta name="google-signin-client_id"
-          content="425106235197-8k5anqpstcrsup0rqo75av8jtg8j669f.apps.googleusercontent.com">
+    <title>Pocket TODO | Home Page</title>
 </svelte:head>
 
 <div class="flex flex-col items-center justify-between h-screen">

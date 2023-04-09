@@ -1,11 +1,11 @@
 <script>
     import {getPB} from "$lib/utils/pockerBase.js";
-    import {mustBeLoggedIn} from "$lib/utils/mustBeLoggedIn.js";
+    import {loginSecurity} from "$lib/utils/loginSecurity.js";
     import {onMount} from "svelte";
     import {randomSillyTodo} from "$lib/store/sillyTodos.js";
     import trashIcon from "$lib/assets/trash.svg";
 
-    mustBeLoggedIn()
+    loginSecurity()
 
     const pb = getPB();
 
@@ -83,6 +83,10 @@
 </script>
 
 <svelte:window on:keydown={onWindowKeyControl}/>
+
+<svelte:head>
+    <title>Pocket TODO | TODO List</title>
+</svelte:head>
 
 <div class="flex items-center justify-between p-5">
     <h1 class="text-2xl font-lobster text-left text-lime-500">PocketTODO</h1>
