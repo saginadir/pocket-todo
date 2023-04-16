@@ -1,7 +1,7 @@
 <script>
     import {page} from "$app/stores";
     import {getPB} from "$lib/utils/pockerBase.js";
-    import {onDestroy, onMount} from "svelte";
+    import {onMount} from "svelte";
     import {redirectURI, codeVerifier} from "$lib/store/googleAuthProvider.js";
     import {setSafeInterval} from "$lib/utils/safeInterval.js";
     import {goto} from "$app/navigation";
